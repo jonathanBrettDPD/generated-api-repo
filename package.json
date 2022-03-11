@@ -1,0 +1,33 @@
+{
+  "name": "@dpdgroupuk/apis-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dpdgroupuk/apis-template.git",
+  "author": "Jakub Rudnicki <jakub.rudnicki@dpdgroup.co.uk>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node index.js create",
+    "check-formatting": "prettier -l --trailing-comma es5",
+    "check-quality": "eslint",
+    "fix-formatting": "prettier --trailing-comma es5 --write"
+  },
+  "bin": {
+    "apis-template": "./index.js"
+  },
+  "dependencies": {
+    "ncp": "^2.0.0",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^1.0.0-rc.2",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.1"
+  }
+}

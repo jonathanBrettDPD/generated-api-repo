@@ -1,0 +1,9 @@
+steps:
+  - name: "gcr.io/cloud-builders/gsutil"
+    args: ["cp", "gs://${PROJECT_ID}_secrets/.npmrc", ".npmrc"]
+  - name: "gcr.io/cloud-builders/yarn"
+    args: ["install"]
+  - name: "gcr.io/cloud-builders/yarn"
+    args: ["check-quality", "."]
+  - name: "gcr.io/cloud-builders/yarn"
+    args: ["check-formatting", "**/*.{js,json,css,md}"]

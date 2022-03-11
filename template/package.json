@@ -1,0 +1,47 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "@google-cloud/debug-agent": "^3.0.1",
+    "@google-cloud/trace-agent": "^3.5.0",
+    "@dpdgroupuk/api-engine": "^2.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^1.0.0-rc.2",
+    "lint-staged": "^7.0.4",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.12.1",
+    "dotenv": "^5.0.1"
+  },
+  "scripts": {
+    "check-formatting": "prettier -l --trailing-comma es5",
+    "check-quality": "eslint",
+    "fix-formatting": "prettier --trailing-comma es5 --write",
+    "start-local": "nodemon --inspect -r dotenv/config server.js",
+    "test": "mocha --recursive"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn check-quality"
+    ],
+    "*.{js,json,css,md}": [
+      "yarn check-formatting"
+    ]
+  }
+}

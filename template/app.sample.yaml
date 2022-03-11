@@ -1,0 +1,12 @@
+runtime: nodejs8
+
+instance_class: ${_INSTANCE_CLASS}
+automatic_scaling:
+  min_instances: ${_MINIMUM_INSTANCES}
+  max_instances: ${_MAXIMUM_INSTANCES}
+  max_concurrent_requests: ${_MAX_CONCURRENT_REQUESTS}
+
+env_variables:
+  SENTRY_DSN: ${_SENTRY_DSN}
+  SENTRY_ENVIRONMENT: ${_SENTRY_ENVIRONMENT}
+  SENTRY_RELEASE: ${_SENTRY_RELEASE}
